@@ -1,0 +1,340 @@
+/* --- SECTION 0: WELCOME PAGE --- */
+.welcome-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 50px; /* Space between text and image */
+}
+
+/* The Huge Title */
+.welcome-text h1 {
+    font-size: 7.5rem; /* Very large font to match image */
+    line-height: 1.1; /* Tighter line spacing */
+    margin-bottom: 60px; /* Space between title and badge */
+}
+
+/* The Pill-Shaped Badge */
+.name-badge {
+    display: inline-flex; /* Shrinks to fit content */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ffffff;
+    border-radius: 50px; /* Makes the corners round (pill shape) */
+    padding: 15px 50px; /* Top/Bottom padding, Left/Right padding */
+    min-width: 300px;
+}
+
+.badge-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.badge-role {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #e0e0e0; /* Slightly dim white */
+}
+
+/* MOBILE ADJUSTMENTS for the Welcome Page */
+@media (max-width: 768px) {
+    .welcome-container {
+        flex-direction: column-reverse; /* Puts image on top on mobile */
+        text-align: center;
+    }
+
+    .welcome-text h1 {
+        font-size: 4.5rem; /* Smaller on phone */
+    }
+    
+    .name-badge {
+        width: 100%; /* Full width on phone */
+        padding: 20px;
+    }
+}
+/* --- GLOBAL STYLES --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000000; /* Deep Black Background */
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif; /* Body Text Font */
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Heading Font */
+    font-weight: 400;
+}
+
+/* --- LAYOUT UTILITIES --- */
+.slide {
+    min-height: 100vh; /* Each section takes full screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 10%;
+}
+
+/* --- SECTION 1: WHO AM I --- */
+.who-am-i-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 50px;
+}
+
+.text-content {
+    flex: 1; /* Takes up left half */
+    max-width: 600px;
+}
+
+.text-content h1 {
+    font-size: 6rem;
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+}
+
+.text-content p {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: #e0e0e0; /* Slightly off-white for better readability */
+}
+
+/* The decorative line at the bottom */
+.divider-line {
+    width: 100px;
+    height: 1px;
+    background-color: #ffffff;
+    margin-top: 40px;
+}
+
+/* The Image/Oval Container */
+.image-content {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+}
+
+.oval-frame {
+    width: 350px;
+    height: 480px;
+    background-color: #e0f7fa; /* Light blue sky color */
+    border-radius: 50%; /* Makes it an oval */
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #333;
+    
+    /* CSS Art for the Hills/Clouds (You can replace this with an <img> tag) */
+    background: linear-gradient(to bottom, #dbeafe 60%, #84cc16 60%);
+}
+
+/* Simulating the cloud using CSS */
+.cloud-art {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 60px;
+    background: white;
+    border-radius: 50px;
+}
+.cloud-art::after, .cloud-art::before {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+.cloud-art::after { width: 80px; height: 80px; top: -40px; left: 20px; }
+.cloud-art::before { width: 60px; height: 60px; top: -20px; right: 20px; }
+
+
+/* --- SECTION 2: MY BACKGROUND --- */
+.background-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Split into two columns */
+    align-items: start;
+}
+
+.bg-title h2 {
+    font-size: 6rem;
+    line-height: 1.1;
+}
+
+.bg-details {
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Space between Education and Skills */
+}
+
+.detail-group {
+    position: relative;
+}
+
+/* The little curved arrow icon */
+.arrow-icon {
+    position: absolute;
+    left: -50px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    fill: none;
+    stroke: white;
+    stroke-width: 1.5;
+}
+
+.detail-group h3 {
+    font-family: 'Poppins', sans-serif; /* Keep headers clean */
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.detail-group ul {
+    list-style: none;
+}
+
+.detail-group li {
+    font-size: 1.5rem;
+    color: #b0b0b0; /* Light gray text for list items */
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
+}
+
+/* Custom bullet point */
+.detail-group li::before {
+    content: "•";
+    color: #555;
+    position: absolute;
+    left: 0;
+}
+
+/* --- RESPONSIVE (MOBILE) --- */
+@media (max-width: 768px) {
+    .who-am-i-container, .background-container {
+        flex-direction: column;
+        display: flex;
+    }
+    
+    .text-content h1, .bg-title h2 {
+        font-size: 3rem;
+    }
+
+    .oval-frame {
+        width: 250px;
+        height: 350px;
+        margin-top: 40px;
+    }
+
+    .bg-details {
+        padding-left: 0;
+        margin-top: 40px;
+    }
+    
+    .arrow-icon {
+        display: none; /* Hide arrows on mobile for cleaner look */
+    }
+}
+/* --- SECTION 3: CONNECT / FOOTER --- */
+.connect-container {
+    text-align: center;
+    max-width: 800px;
+}
+
+.connect-container h2 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.connect-container p {
+    font-size: 1.6rem; /* Matches your bigger text size */
+    color: #b0b0b0;
+    margin-bottom: 50px;
+}
+
+/* BUTTON STYLES */
+.button-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+}
+
+/* White Button */
+.btn-primary {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 600;
+}
+
+/* Outline Button */
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: scale(1.05); /* Slight grow effect on hover */
+}
+
+/* SOCIAL LINKS */
+.social-links {
+    margin-bottom: 100px;
+}
+
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: 'Playfair Display', serif; /* Fancy font for links */
+    font-style: italic;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+.separator {
+    margin: 0 15px;
+    color: #555;
+    font-size: 1.5rem;
+}
+
+.copyright {
+    font-size: 0.9rem !important; /* Force small size for copyright */
+    color: #444 !important;
+}
+
+/* MOBILE ADJUSTMENT */
+@media (max-width: 768px) {
+    .connect-container h2 {
+        font-size: 3.5rem;
+    }
+    .button-group {
+        flex-direction: column; /* Stack buttons on phone */
+    }
+}
