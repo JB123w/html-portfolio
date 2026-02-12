@@ -337,4 +337,12 @@ h1, h2, h3 {
     .button-group {
         flex-direction: column; /* Stack buttons on phone */
     }
+
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This crops the image slightly so it doesn't stretch */
+    display: block;
 }
